@@ -101,7 +101,7 @@ func (wrapper *Wrapper) GetTimeSeriesConfirmedGlobal() (*TimeSeriesSummary, erro
 ```go
 package main
 
-import wrapper "cloudeya/coronavirusapi-go"
+import wrapper "Cloudeya/coronavirusapi-go"
 
 func main() {
 	apiWrapper := wrapper.NewWrapper("token here")
@@ -119,7 +119,7 @@ func (wrapper *Wrapper) GetTimeSeriesConfirmedUS() (*TimeSeriesSummary, error)
 ```go
 package main
 
-import wrapper "cloudeya/coronavirusapi-go"
+import wrapper "Cloudeya/coronavirusapi-go"
 
 func main() {
 	apiWrapper := wrapper.NewWrapper("token here")
