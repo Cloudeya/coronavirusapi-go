@@ -1,7 +1,7 @@
 <p align="center">
-  <img alt="coronavirusapi-go logo" src="assets/go.png" height="100" />
+  <img alt="coronavirusapi-go logo" src="assets/go.png" height="150" />
   <h3 align="center">coronavirusapi-go</h3>
-  <p align="center">A Golang wrapper to work with the <a href="https://www.covid19api.dev">Coronavirus API</a></p>
+  <p align="center">A Golang wrapper to work with the <a href="https://www.covid19api.dev">Coronavirus API</a>.</p>
 </p>
 
 ---
