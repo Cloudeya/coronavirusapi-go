@@ -1,4 +1,4 @@
-module cloudeya/coronavirusapi-go
+module Cloudeya/coronavirusapi-go
 
 go 1.14
 

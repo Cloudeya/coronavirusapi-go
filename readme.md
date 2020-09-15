@@ -1,34 +1,53 @@
-# Coronavirus API Wrapper
-*A Golang wrapper to work with the [Coronavirus API](https://www.covid19api.dev/)*
+<p align="center">
+  <img alt="coronavirusapi-go logo" src="assets/go.png" height="100" />
+  <h3 align="center">coronavirusapi-go</h3>
+  <p align="center">A Golang wrapper to work with the [Coronavirus API](https://www.covid19api.dev/)</p>
+</p>
 
-# How to use
+---
 
-## Create a new wrapper using API token
+# How To Use
 
-To create a new wrapper just call the following function:
+## Create a new wrapper using the API token
+
+To create a new wrapper call the following function
+
 ```go
 func NewWrapper(token string) *Wrapper
 ```
-it will return the new wrapper ready to use to request the API.
 
-## Create a new wrapper using username and password
-To create a new wrapper username and password just call the function: 
+It'll return the new wrapper, and you should be ready to request the API.
+
+## Generate a `Token` using `Username` and `Password`
+
+Use your `username` and `password` to generate a `token` by calling this function
+
 ```go
 func NewWrapperWithCredentials(username string, password string)  (*Wrapper, error)
 ```
-it will request the token using the credentials and store the token for further request. The username and password is not stored.
 
-## Request a new token using username and password
-if you are only intersted in the token, you can call the function:
+It'll generate a `token` using the credentials and store the token for further request(s).
+
+**Note:** The `username` and `password` is not stored.
+
+## Request a new token using `username` and `password`
+
+If you are only intersted in generating a new `token`, you can call this function
+
 ```go
 func (wrapper *Wrapper) GetTokenUsingCredentials(username string, password string) (string, error)
 ```
-it will return the token if the call succeded, or an error otherwise.
+
+It'll return the `token` if the call succeeds, or an error if it fails.
+
 ## Available API call in the wrapper
-Here is a list of available methods in the `Wrapper`:
+
+Here is a list of available methods in the `Wrapper`
 
 ### Get Global Daily Reports
-`GetReportsAt` gets the Global Daily Reports at a given date.
+
+`GetReportsAt` gets the Global Daily Reports of a specified date.
+
 ```go
 func (wrapper *Wrapper) GetReportsAt(date time.Time) (*GlobalDailyReport, error) 
 ```
@@ -39,7 +58,7 @@ func (wrapper *Wrapper) GetReportsAt(date time.Time) (*GlobalDailyReport, error)
 package main
 
 import (
-	wrapper "cloudeya/coronavirusapi-go"
+	wrapper "Cloudeya/coronavirusapi-go"
 	"fmt"
 	"time"
 )
@@ -58,15 +77,21 @@ func main() {
 ```
 
 ### Time Series Summary
-The follwing methods get the time series for either Deaths, recovered or confirmed cases in the US or Globaly.
+
+The following methods get the time series for either `deaths`, `recovered` or `confirmed` cases in the United States or Globally.
 
 #### Get Time Series For a case type and country
-You make a custom request using the follwing methode, timeSeriesType can either be "deaths", "recovered" or "confirmed" and country either "us" or "global".
+
+You can make a custom request using the following method:
+
+`timeSeriesType` can either be `deaths`, `recovered` or `confirmed` and the country either be `us` or `global`.
+
 ```go
 func (wrapper *Wrapper) GetTimeSeriesFor(timeSeriesType TimeSeriesType, country TimeSeriesCountry) (*TimeSeriesSummary, error) 
 ```
 
-#### Confirmed-Global Time Series 
+#### Confirmed-Global Time Series
+
 ```go
 func (wrapper *Wrapper) GetTimeSeriesConfirmedGlobal() (*TimeSeriesSummary, error)
 ```
@@ -114,7 +139,6 @@ func (wrapper *Wrapper) GetTimeSeriesDeathsGlobal() (*TimeSeriesSummary, error)
 func (wrapper *Wrapper) GetTimeSeriesDeathsUS() (*TimeSeriesSummary, error)
 ```
 
-
 #### Global-Recovered Time Series 
 
 ```go
@@ -150,7 +174,6 @@ type Report struct {
 	IncidenceRate     float64 `json:"incidence_rate,omitempty"`
 }
 ```
-
 
 #### Time Series Summary
 
@@ -198,20 +221,48 @@ Example:
 ### Changing wrapper defaults
 
 #### API URL
- By default the wrapper uses as a URL: `"https://covid19.cloudeya.org"` to change it all you need to do is call the function:
 
- ```go
+By default, the wrapper uses this URL `https://covid19.cloudeya.org`. To change it, you need to call this function
+
+```go
 func (wrapper *Wrapper) SetTimeout(apiTimout time.Duration)
  ```
 
 #### HTTP Timeout when calling the API
-By default the timeout is set to: 10 seconds, to change it call the function:
- ```go
+
+By default, the timeout is set to `10 seconds`. You can change it by calling this function
+
+```go
 func (wrapper *Wrapper) SetTimeout(apiTimout time.Duration)
-  ```
+```
 
 #### Wrapper sleep time between retry
-By default the wrapper sleeps for 60 seconds if the first call to the API is TooManyRequests, to change this duration, call this method:
- ```go
+
+By default, the wrapper sleeps for `60 seconds` if the first call to the API is `TooManyRequests`. To change the duration, call this function
+
+```go
 func (wrapper *Wrapper) SetTimeSleepBetweenRetry(sleepDuration time.Duration) 
-  ```
+```
+
+## Contributing
+
+Please read [CONTRIBUTING.md](https://gist.github.com/PurpleBooth/b24679402957c63ec426) for details on our code of conduct, and the process for submitting pull requests to us.
+
+## Versioning
+
+We use [SemVer](http://semver.org/) for versioning. For the versions available, see the [tags on this repository](https://github.com/Cloudeya/coronavirusapi-go/tags).
+
+## Authors
+
+- **Finbarrs Oketunji** _aka 0xnu_ - _Product Owner_ - [0xnu](https://github.com/0xnu)
+- **Amazzal El-habib** _aka 0xnu_ - _Main Developer_ - [amazzalel-habib](https://github.com/amazzalel-habib)
+
+See also the list of [contributors](https://github.com/Cloudeya/coronavirusapi-go/contributors) who participated in this project.
+
+## License
+
+This project is licensed under the [WTFPL License](LICENSE) - see the file for details.
+
+## Copyright
+
+(c) 2020 [Cloudeya Limited](https://cloudeya.org).
