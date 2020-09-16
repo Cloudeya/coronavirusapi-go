@@ -249,25 +249,25 @@ By default, the wrapper sleeps for `60 seconds` if the first call to the API is 
 func (wrapper *Wrapper) SetTimeSleepBetweenRetry(sleepDuration time.Duration) 
 ```
 
-### Contributing
+## Contributing
 
 Please read [CONTRIBUTING.md](https://gist.github.com/PurpleBooth/b24679402957c63ec426) for details on our code of conduct, and the process for submitting pull requests to us.
 
-### Versioning
+## Versioning
 
 We use [SemVer](http://semver.org/) for versioning. For the versions available, see the [tags on this repository](https://github.com/Cloudeya/coronavirusapi-go/tags).
 
-### Authors
+## Authors
 
 - **Finbarrs Oketunji** _aka 0xnu_ - _Product Owner_ - [0xnu](https://github.com/0xnu)
 - **Amazzal El-habib** _aka 0xnu_ - _Main Developer_ - [amazzalel-habib](https://github.com/amazzalel-habib)
 
 See also the list of [contributors](https://github.com/Cloudeya/coronavirusapi-go/contributors) who participated in this project.
 
-### License
+## License
 
 This project is licensed under the [WTFPL License](LICENSE) - see the file for details.
 
-### Copyright
+## Copyright
 
 (c) 2020 [Cloudeya Limited](https://cloudeya.org).
