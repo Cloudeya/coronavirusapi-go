@@ -4,6 +4,9 @@
   <p align="center">A Golang wrapper to work with the <a href="https://www.covid19api.dev">Coronavirus API</a>.</p>
 </p>
 
+[![Release](https://img.shields.io/github/release/Cloudeya/coronavirusapi-go.svg)](https://github.com/Cloudeya/coronavirusapi-go/releases/latest)
+[![License](https://img.shields.io/github/license/Cloudeya/coronavirusapi-go)](/LICENSE)
+
 ---
 
 ### How To Use
