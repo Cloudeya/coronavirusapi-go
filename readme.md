@@ -11,9 +11,9 @@
 
 ---
 
-### How To Use
+## How To Use
 
-#### Create a new wrapper using the API token
+### Create a new wrapper using the API token
 
 To create a new wrapper call the following function
 
@@ -23,7 +23,7 @@ func NewWrapper(token string) *Wrapper
 
 It'll return the new wrapper, and you should be ready to request the API.
 
-#### Generate a `token` using `username` and `password`
+### Generate a `token` using `username` and `password`
 
 Use your `username` and `password` to generate a `token` by calling this function
 
@@ -35,7 +35,7 @@ It'll generate a `token` using the credentials and store the token for further r
 
 **Note:** The `username` and `password` is not stored.
 
-#### Request a new token using `username` and `password`
+### Request a new token using `username` and `password`
 
 If you are only intersted in generating a new `token`, you can call this function
 
@@ -45,11 +45,11 @@ func (wrapper *Wrapper) GetTokenUsingCredentials(username string, password strin
 
 It'll return the `token` if the call succeeds, or an error if it fails.
 
-#### Available API call in the wrapper
+## Available API call in the wrapper
 
 Here is a list of available methods in the `Wrapper`
 
-#### Get Global Daily Reports
+### Get Global Daily Reports
 
 `GetReportsAt` gets the Global Daily Reports of a specified date.
 
@@ -57,7 +57,7 @@ Here is a list of available methods in the `Wrapper`
 func (wrapper *Wrapper) GetReportsAt(date time.Time) (*GlobalDailyReport, error) 
 ```
 
-#### Example
+### Example
 
 ```go
 package main
@@ -81,11 +81,11 @@ func main() {
 }
 ```
 
-#### Time Series Summary
+## Time Series Summary
 
 The following methods get the time series for either `deaths`, `recovered` or `confirmed` cases in the United States or Globally.
 
-#### Get Time Series For a case type and country
+### Get Time Series For a case type and country
 
 You can make a custom request using the following method:
 
@@ -95,13 +95,13 @@ You can make a custom request using the following method:
 func (wrapper *Wrapper) GetTimeSeriesFor(timeSeriesType TimeSeriesType, country TimeSeriesCountry) (*TimeSeriesSummary, error) 
 ```
 
-#### Confirmed Global Time Series
+### Confirmed Global Time Series
 
 ```go
 func (wrapper *Wrapper) GetTimeSeriesConfirmedGlobal() (*TimeSeriesSummary, error)
 ```
 
-#### Example
+### Example
 
 ```go
 package main
@@ -113,13 +113,13 @@ func main() {
     deathsGlobal, err := apiWrapper.GetTimeSeriesConfirmedGlobal()
 }
 ```
-#### Confirmed US Time Series 
+### Confirmed US Time Series 
 
 ```go
 func (wrapper *Wrapper) GetTimeSeriesConfirmedUS() (*TimeSeriesSummary, error)
 ```
 
-#### Example
+## Example
 
 ```go
 package main
@@ -132,27 +132,27 @@ func main() {
 }
 ```
 
-#### Global Deaths Time Series 
+### Global Deaths Time Series 
 
 ```go
 func (wrapper *Wrapper) GetTimeSeriesDeathsGlobal() (*TimeSeriesSummary, error)
 ```
 
-#### US Deaths Time Series 
+### US Deaths Time Series 
 
 ```go
 func (wrapper *Wrapper) GetTimeSeriesDeathsUS() (*TimeSeriesSummary, error)
 ```
 
-#### Global Recovered Time Series 
+### Global Recovered Time Series 
 
 ```go
 func (wrapper *Wrapper) GetTimeSeriesRecoveredGlobal() (*TimeSeriesSummary, error)
 ```
 
-#### Available Structures
+## Available Structures
 
-##### Global Daily Reports
+### Global Daily Reports
 
 ```go
 // GlobalDailyReport the Global Daily Reports
@@ -180,7 +180,7 @@ type Report struct {
 }
 ```
 
-##### Time Series Summary
+### Time Series Summary
 
 ```go
 // TimeSeriesSummary Time Series Summary
@@ -223,9 +223,9 @@ Example:
 }
  ```
 
-#### Changing Wrapper Defaults
+## Changing Wrapper Defaults
 
-##### API URL
+### API URL
 
 By default, the wrapper uses this URL `https://covid19.cloudeya.org`. To change it, you need to call this function
 
@@ -233,7 +233,7 @@ By default, the wrapper uses this URL `https://covid19.cloudeya.org`. To change 
 func (wrapper *Wrapper) SetTimeout(apiTimout time.Duration)
  ```
 
-##### HTTP Timeout when calling the API
+### HTTP Timeout when calling the API
 
 By default, the timeout is set to `10 seconds`. You can change it by calling this function
 
@@ -241,7 +241,7 @@ By default, the timeout is set to `10 seconds`. You can change it by calling thi
 func (wrapper *Wrapper) SetTimeout(apiTimout time.Duration)
 ```
 
-##### Wrapper sleep time between retry
+### Wrapper sleep time between retry
 
 By default, the wrapper sleeps for `60 seconds` if the first call to the API is `TooManyRequests`. To change the duration, call this function
 
@@ -249,25 +249,25 @@ By default, the wrapper sleeps for `60 seconds` if the first call to the API is 
 func (wrapper *Wrapper) SetTimeSleepBetweenRetry(sleepDuration time.Duration) 
 ```
 
-#### Contributing
+### Contributing
 
 Please read [CONTRIBUTING.md](https://gist.github.com/PurpleBooth/b24679402957c63ec426) for details on our code of conduct, and the process for submitting pull requests to us.
 
-#### Versioning
+### Versioning
 
 We use [SemVer](http://semver.org/) for versioning. For the versions available, see the [tags on this repository](https://github.com/Cloudeya/coronavirusapi-go/tags).
 
-#### Authors
+### Authors
 
 - **Finbarrs Oketunji** _aka 0xnu_ - _Product Owner_ - [0xnu](https://github.com/0xnu)
 - **Amazzal El-habib** _aka 0xnu_ - _Main Developer_ - [amazzalel-habib](https://github.com/amazzalel-habib)
 
 See also the list of [contributors](https://github.com/Cloudeya/coronavirusapi-go/contributors) who participated in this project.
 
-#### License
+### License
 
 This project is licensed under the [WTFPL License](LICENSE) - see the file for details.
 
-#### Copyright
+### Copyright
 
 (c) 2020 [Cloudeya Limited](https://cloudeya.org).
