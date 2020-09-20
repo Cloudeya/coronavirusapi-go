@@ -257,13 +257,6 @@ Please read [CONTRIBUTING.md](https://gist.github.com/PurpleBooth/b24679402957c6
 
 We use [SemVer](http://semver.org/) for versioning. For the versions available, see the [tags on this repository](https://github.com/Cloudeya/coronavirusapi-go/tags).
 
-## Authors
-
-- **Finbarrs Oketunji** _aka 0xnu_ - _Product Owner_ - [0xnu](https://github.com/0xnu)
-- **Amazzal El-habib** _aka 0xnu_ - _Main Developer_ - [amazzalel-habib](https://github.com/amazzalel-habib)
-
-See also the list of [contributors](https://github.com/Cloudeya/coronavirusapi-go/contributors) who participated in this project.
-
 ## License
 
 This project is licensed under the [WTFPL License](LICENSE) - see the file for details.
