@@ -13,7 +13,7 @@ import (
 )
 
 const (
-	defaultAPIURL    = "https://covid19.cloudeya.org"
+	defaultAPIURL    = "https://api.covid19api.dev"
 	defaultAPITimout = time.Second * 10
 	defaultSleepTime = time.Second * 60
 )
